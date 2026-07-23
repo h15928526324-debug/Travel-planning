@@ -14,4 +14,4 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # 读取并执行前端主文件
 frontend = PROJECT_ROOT / "frontend" / "app.py"
 code = compile(frontend.read_text(encoding="utf-8"), str(frontend), "exec")
-exec(code, {"__name__": "__main__"})
+exec(code, {"__name__": "__main__", "__file__": str(frontend)})
